@@ -23,7 +23,7 @@ ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS=0
 ARG LOCAL_USER_ID=1000
 ARG LOCAL_GROUP_ID=1000
 
-ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/download/2.7.38/install-php-extensions /usr/local/bin/
 
 RUN apk add --no-cache --virtual .persistent-deps \
     fcgi \
