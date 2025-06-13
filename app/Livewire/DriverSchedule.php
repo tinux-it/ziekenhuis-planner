@@ -3,14 +3,17 @@
 namespace App\Livewire;
 
 use App\Models\Driver;
-use Livewire\Component;
 use Carbon\Carbon;
+use Livewire\Component;
 
 class DriverSchedule extends Component
 {
     public $name = '';
+
     public $selectedDate = '';
+
     public $editingDriverId = null;
+
     public $editingName = '';
 
     protected $rules = [
@@ -110,10 +113,9 @@ class DriverSchedule extends Component
         return view('livewire.driver-schedule', [
             'schedule' => $schedule,
             'availableDates' => $dates->filter(function ($date) use ($drivers) {
-                return !isset($drivers[$date->format('Y-m-d')]);
+                return ! isset($drivers[$date->format('Y-m-d')]);
             }),
             'dates' => $dates,
         ]);
     }
-
 }

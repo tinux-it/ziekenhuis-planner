@@ -1,8 +1,8 @@
 <?php
 
+use App\Livewire\DriverSchedule;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
-use App\Livewire\DriverSchedule;
 
 Route::get('/', function () {
     return view('welcome');

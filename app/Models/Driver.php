@@ -11,4 +11,4 @@ class Driver extends Model
     protected $casts = [
         'date' => 'date',
     ];
-} 
+}
