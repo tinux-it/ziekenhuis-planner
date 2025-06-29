@@ -158,6 +158,15 @@
                                             <div>
                                                 <h4 class="font-semibold text-gray-900 text-lg">
                                                     {{ Carbon::parse($date)->locale('nl')->translatedFormat('l j F, H:i') }}
+                                                    @php
+                                                        $dayOfWeek = Carbon::parse($date)->locale('nl')->dayName;
+                                                    @endphp
+
+                                                    @if(strtolower($dayOfWeek) === 'donderdag')
+                                                        <p class="text-sm text-red-600 font-semibold">
+                                                            Afspraakduur: 5 uur
+                                                        </p>
+                                                    @endif
                                                 </h4>
                                                 <p class="text-sm text-gray-600">
                                                     {{ Carbon::parse($date)->locale('nl')->translatedFormat('d-m-y H:i') }}
