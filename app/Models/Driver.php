@@ -9,6 +9,6 @@ class Driver extends Model
     protected $fillable = ['name', 'date'];
 
     protected $casts = [
-        'date' => 'date',
+        'date' => 'datetime',
     ];
 }

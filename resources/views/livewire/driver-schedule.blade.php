@@ -13,8 +13,8 @@
             <h1 class="text-4xl font-bold text-gray-900 mb-4">Rijschema Ziekenhuisvervoer</h1>
             <div class="max-w-2xl mx-auto">
                 <p class="text-lg text-gray-600 leading-relaxed">
-                    Samen staan we sterk. Help jij Kelsey door met haar mee te rijden naar het ziekenhuis in Enschede?
-                    Jouw steun betekent ontzettend veel in deze moeilijke periode.
+                    Help jij Kelsey door met haar mee te rijden naar het ziekenhuis in Enschede?
+                    Jouw steun betekent ontzettend veel.
                 </p>
             </div>
         </div>
@@ -73,8 +73,8 @@
                                         class="block w-full pl-10 pr-3 py-3 border border-gray-200 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 appearance-none bg-white">
                                     <option value="">Kies een beschikbare datum</option>
                                     @foreach($availableDates as $date)
-                                        <option value="{{ $date->format('d-m-Y') }}">
-                                            {{ $date->translatedFormat('l j F Y') }}
+                                        <option value="{{ $date->format('d-m-Y H:i') }}">
+                                            {{ Carbon::parse($date)->locale('nl')->translatedFormat('l j F, H:i') }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -111,7 +111,9 @@
                             </svg>
                             <div class="text-sm text-blue-800">
                                 <p class="font-medium mb-1">Volgende stappen:</p>
-                                <p>Na registratie kun je direct contact opnemen met Kelsey om een precieze tijd af te spreken voor het ziekenhuisbezoek.</p>
+                                <p class="mt-2">Let op: op donderdagen vindt zowel de chemo als de bestraling plaats. Deze combinatiebehandeling duurt ongeveer 5 uur.</p>
+                                <p>Op de overige dagen duurt een behandeling maximaal 1 uur.</p>
+                                <p class="mt-2">Zorg ervoor dat je minimaal 50 minuten van tevoren bij Kelsey aanwezig bent.</p>
                             </div>
                         </div>
                     </div>
@@ -155,10 +157,10 @@
                                             </div>
                                             <div>
                                                 <h4 class="font-semibold text-gray-900 text-lg">
-                                                    {{ Carbon::parse($date)->locale('nl')->translatedFormat('l j F') }}
+                                                    {{ Carbon::parse($date)->locale('nl')->translatedFormat('l j F, H:i') }}
                                                 </h4>
                                                 <p class="text-sm text-gray-600">
-                                                    {{ Carbon::parse($date)->locale('nl')->translatedFormat('Y') }}
+                                                    {{ Carbon::parse($date)->locale('nl')->translatedFormat('d-m-y H:i') }}
                                                 </p>
                                             </div>
                                         </div>
@@ -244,7 +246,6 @@
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
                 </svg>
-                <span class="text-sm">Samen staan we sterk</span>
             </div>
         </div>
 
