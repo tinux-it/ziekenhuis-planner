@@ -123,6 +123,22 @@
             <!-- Schedule Display -->
             <div class="lg:col-span-5">
                 <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                    <div class="mt-4 mb-4 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold text-blue-900">{{ collect($schedule)->filter()->count() }}</div>
+                                <div class="text-sm text-blue-700">Toegewezen</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-gray-600">{{ collect($schedule)->reject()->count() }}</div>
+                                <div class="text-sm text-gray-600">Beschikbaar</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-green-700">{{ count($schedule) }}</div>
+                                <div class="text-sm text-green-700">Totaal Dagen</div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="flex items-center justify-between mb-8">
                         <div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-2">Planning Overzicht</h3>
@@ -228,24 +244,6 @@
                                 </div>
                             </div>
                         @endforeach
-                    </div>
-
-                    <!-- Summary Stats -->
-                    <div class="mt-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
-                        <div class="grid grid-cols-3 gap-4 text-center">
-                            <div>
-                                <div class="text-2xl font-bold text-blue-900">{{ collect($schedule)->filter()->count() }}</div>
-                                <div class="text-sm text-blue-700">Toegewezen</div>
-                            </div>
-                            <div>
-                                <div class="text-2xl font-bold text-gray-600">{{ collect($schedule)->reject()->count() }}</div>
-                                <div class="text-sm text-gray-600">Beschikbaar</div>
-                            </div>
-                            <div>
-                                <div class="text-2xl font-bold text-green-700">{{ count($schedule) }}</div>
-                                <div class="text-sm text-green-700">Totaal Dagen</div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
