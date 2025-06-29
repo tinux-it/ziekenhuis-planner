@@ -114,7 +114,6 @@ class DriverSchedule extends Component
             '2025-08-19 09:00',
             '2025-08-20 09:00',
             '2025-08-21 09:30',
-            '2025-08-21 10:00',
         ];
 
         return collect($dateStrings)->map(fn ($date) => Carbon::parse($date));
