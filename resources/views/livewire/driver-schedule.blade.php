@@ -22,7 +22,7 @@
         <div class="grid lg:grid-cols-7 gap-8">
 
             <!-- Registration Form -->
-            <div class="lg:col-span-2">
+            <div class="lg:col-span-2" id="driver-form">
                 <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
                     <div class="text-center mb-8">
                         <div class="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-4">
@@ -211,17 +211,19 @@
                                             </div>
                                         </div>
                                     @else
-                                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center group-hover:border-blue-300 transition-colors duration-200">
-                                            <svg class="w-8 h-8 text-gray-400 mx-auto mb-2 group-hover:text-blue-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                                            </svg>
-                                            <p class="text-sm text-gray-500 group-hover:text-blue-600 transition-colors duration-200">
-                                                Nog geen chauffeur
-                                            </p>
-                                            <p class="text-xs text-gray-400 mt-1">
-                                                Meld je aan om te helpen
-                                            </p>
-                                        </div>
+                                        <a href="#driver-form">
+                                            <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center group-hover:border-blue-300 transition-colors duration-200">
+                                                <svg class="w-8 h-8 text-gray-400 mx-auto mb-2 group-hover:text-blue-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                                <p class="text-sm text-gray-500 group-hover:text-blue-600 transition-colors duration-200">
+                                                    Nog geen chauffeur
+                                                </p>
+                                                <p class="text-xs text-gray-400 mt-1">
+                                                    Meld je aan om te helpen
+                                                </p>
+                                            </div>
+                                        </a>
                                     @endif
                                 </div>
                             </div>
